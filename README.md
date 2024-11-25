@@ -11,6 +11,14 @@ This is the official repository for LTX-Video.
 
 </div>
 
+```bash
+sudo apt-get update && sudo apt-get install cbm ffmpeg git-lfs
+git clone https://huggingface.co/spaces/svjack/LTX-Video-Playground && cd LTX-Video-Playground && pip install -r requirements.txt
+export OPENAI_API_KEY=
+python app.py
+```
+
+
 ## Table of Contents
 
 - [Introduction](#introduction)
