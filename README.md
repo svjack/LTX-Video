@@ -126,6 +126,11 @@ model_path = 'PATH'   # The local directory to save downloaded checkpoint
 snapshot_download("Lightricks/LTX-Video", local_dir=model_path, local_dir_use_symlinks=False, repo_type='model')
 ```
 
+```bash
+python inference.py --ckpt_path 'PATH' --prompt "a balloon" --input_image_path IMG_8199. jpeg
+--height 512 --width 512 --num_frames 16 --seed 42 --offload_to_cpu
+```
+
 ### Inference
 
 To use our model, please follow the inference code in [inference.py](./inference.py):
