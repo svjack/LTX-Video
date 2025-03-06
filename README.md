@@ -108,6 +108,8 @@ The model is accessible right away via following links:
 The codebase was tested with Python 3.10.5, CUDA version 12.2, and supports PyTorch >= 2.1.2.
 
 ```bash
+sudo apt-get update && sudo apt-get install cbm ffmpeg git-lfs
+
 git clone https://github.com/Lightricks/LTX-Video.git
 cd LTX-Video
 
