@@ -147,7 +147,7 @@ hf_hub_download(
 #!/bin/bash
 
 # 定义常量
-CKPT_PATH="path/to/checkpoint"  # 替换为实际的检查点路径
+CKPT_PATH="MODEL_DIR/ltx-video-2b-v0.9.5.safetensors"  # 替换为实际的检查点路径
 PROMPT="A beautiful landscape"  # 替换为实际的提示文本
 HEIGHT=256                      # 替换为实际的高度值
 WIDTH=256                       # 替换为实际的宽度值
