@@ -120,6 +120,49 @@ python -m pip install -e .\[inference-script\]
 Then, download the model from [Hugging Face](https://huggingface.co/Lightricks/LTX-Video) 
 
 ```python
+import os
+from huggingface_hub import hf_hub_download
+
+# 设置 HF-Mirror 作为 Hugging Face 的下载端点
+os.environ['HF_ENDPOINT'] = 'https://hf-mirror.com'
+
+# 设置代理环境变量（如果需要代理）
+# os.environ['http_proxy'] = 'http://your_proxy_server:port'
+# os.environ['https_proxy'] = 'http://your_proxy_server:port'
+
+# 下载模型
+model_dir = 'MODEL_DIR'   # The local directory to save downloaded checkpoint
+hf_hub_download(
+    repo_id="Lightricks/LTX-Video", 
+    filename="ltx-video-2b-v0.9.5.safetensors", 
+    local_dir=model_dir, 
+    local_dir_use_symlinks=False, 
+    repo_type='model'
+)
+```
+
+```bash
+#!/bin/bash
+
+# 定义常量
+CKPT_PATH="path/to/checkpoint"  # 替换为实际的检查点路径
+PROMPT="A beautiful landscape"  # 替换为实际的提示文本
+HEIGHT=256                      # 替换为实际的高度值
+WIDTH=256                       # 替换为实际的宽度值
+NUM_FRAMES=30                   # 替换为实际的帧数
+SEED=42                         # 替换为实际的随机种子值
+
+# 执行Python命令
+python inference.py \
+    --ckpt_path "$CKPT_PATH" \
+    --prompt "$PROMPT" \
+    --height $HEIGHT \
+    --width $WIDTH \
+    --num_frames $NUM_FRAMES \
+    --seed $SEED
+```
+
+```python
 from huggingface_hub import snapshot_download
 
 model_path = 'PATH'   # The local directory to save downloaded checkpoint
